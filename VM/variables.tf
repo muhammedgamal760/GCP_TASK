@@ -10,9 +10,9 @@ variable os_image{
     type = string
 }
 
-# variable vm_region{
-#     type = string 
-# }
+variable vm_region{
+    type = string 
+}
 
 variable vm_zone{
     type = string

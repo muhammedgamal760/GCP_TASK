@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
-    bucket = "jimmy"
-    key    = "jimmy.tfstate"
-    region = "us-central-1"
+    bucket = "jimy"
+    # key    = "jimmy.tfstate"
+    # region = "us-central-1"
   }
 }

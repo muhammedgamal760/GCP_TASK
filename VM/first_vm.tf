@@ -1,6 +1,7 @@
 resource "google_compute_instance" "first-vm" {
   name         = var.machine_name
   machine_type = var.machine_type
+  region = var.vm_region
   zone         = var.vm_zone
 
   boot_disk {
@@ -28,6 +29,6 @@ resource "google_compute_instance" "first-vm" {
 
 
 resource "google_service_account" "vm-sa" {
-  account_id   = "vm-sa"
-  display_name = "vm-sa"
+  account_id   = "first-vm-sa"
+  display_name = "first-vm-sa"
 }

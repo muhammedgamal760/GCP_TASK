@@ -3,7 +3,7 @@ variable cluster_region{
 }
 
 variable cluster_zones_list{
-    type = string
+    type = list
 }
 
 variable machine_type{

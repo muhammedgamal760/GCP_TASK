@@ -1,0 +1,5 @@
+# dataset_name = "first-dataset"
+# machine_name = ""
+# machine_type = "e2-standard-2"
+# os_image = ""
+# vm_zone = ""

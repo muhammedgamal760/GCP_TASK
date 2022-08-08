@@ -1,7 +1,7 @@
 resource "google_compute_subnetwork" "first-subnet" {
   name          = var.subnet_name
   ip_cidr_range = var.subnet_cidr
-  region        = "us-east1"
+  region        = "us-central1"
   network       = google_compute_network.first-vpc.id
 #   secondary_ip_range {
 #     range_name    = "pods"
