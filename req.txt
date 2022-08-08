@@ -1,0 +1,6 @@
+محتاجين نظبط طريقتنا ل نده المديولز جوه بعض
+محتاجين نظبط حتة السيرفس اكونتس
+cluster >>
+            machine os image
+            total no of nodes
+            boot disk size and type
