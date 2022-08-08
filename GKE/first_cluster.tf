@@ -1,10 +1,10 @@
 resource "google_container_cluster" "first-gke" {
-  name     = "first-gke"
-  location = "us-central1"
+  name     = var.cluster_name
+  location = var.cluster_region
   initial_node_count = 2
   remove_default_node_pool = true
-#   network = module.Network.vpc
-#   subnetwork = module.Network.subnet
+  network = module.Network.vpc_id
+  subnetwork = module.Network.subnet_id
   default_max_pods_per_node = 10
   ip_allocation_policy {
   cluster_secondary_range_name = "pods"
@@ -19,7 +19,7 @@ resource "google_container_cluster" "first-gke" {
   private_cluster_config {
   enable_private_endpoint = true
   enable_private_nodes    = true
-  master_ipv4_cidr_block  = "172.16.0.32/28"
+  master_ipv4_cidr_block  = var.master_node_cidr
 } 
   workload_identity_config {
 #   workload_pool = "jimmy-gcp-348513.svc.id.goog"
@@ -33,12 +33,12 @@ cluster_autoscaling{
 resource "google_container_node_pool" "first-node-pool" {
   name       = "first-node-pool"
 #   location = "us-east1-b"
-  node_locations = ["us-central1-c","us-central1-f"]
+  node_locations = var.cluster_zones_list
   cluster    = google_container_cluster.first-gke.name
-  node_count = 2
+  node_count = var.number_of_nodes_per_zone
   node_config {
     preemptible  = true
-    machine_type = "e2-standard-2"
+    machine_type = var.machine_type
     # service_account = google_service_account.jimmy-sa2.email
     oauth_scopes    = [
       "https://www.googleapis.com/auth/cloud-platform"
