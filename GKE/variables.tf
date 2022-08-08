@@ -21,3 +21,11 @@ variable cluster_name{
 variable master_node_cidr{
     type = string
 }
+
+variable vpc_id{
+    type = string
+}
+
+variable subnet_id{
+    type = string
+}

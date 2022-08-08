@@ -1,7 +1,6 @@
 resource "google_compute_instance" "first-vm" {
   name         = var.machine_name
   machine_type = var.machine_type
-  region = var.vm_region
   zone         = var.vm_zone
 
   boot_disk {
@@ -12,7 +11,7 @@ resource "google_compute_instance" "first-vm" {
 
 
   network_interface {
-    network = module.Network.vpc_id
+    network = var.vpc_id
 
     access_config {
       //Ephemeral public IP
@@ -32,3 +31,4 @@ resource "google_service_account" "vm-sa" {
   account_id   = "first-vm-sa"
   display_name = "first-vm-sa"
 }
+
