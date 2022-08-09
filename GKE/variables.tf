@@ -30,6 +30,6 @@ variable subnet_id{
     type = string
 }
 
-variable service_account{
+variable email{
     type = string
 }

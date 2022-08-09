@@ -15,15 +15,15 @@ bucket_one   = "first-bucket"
 bucket_two   = "second-bucket"
 bucket_three = "third-bucket"
 # bucket_four   = "fourth-bucket"
-storage_class   = "STANDARD"
+storage_class = "STANDARD"
 
 
-bucket_sa_id = "bucket-sa-id" 
-bucket_sa = "bucket-sa"
-bq_sa_id = "bq-sa-id"
-bq_sa = "bq-sa"
-gcr_sa_id = "gcr-sa-id"
-gcr_sa = "gcr-sa"
+bucket_sa_id = "bucket-sa-id"
+bucket_sa    = "bucket-sa"
+bq_sa_id     = "bq-sa-id"
+bq_sa        = "bq-sa"
+gcr_sa_id    = "gcr-sa-id"
+gcr_sa       = "gcr-sa"
 
 
 vpc_cidr    = "10.1.0.0/16"
