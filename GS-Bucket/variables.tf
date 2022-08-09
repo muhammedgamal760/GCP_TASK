@@ -5,3 +5,7 @@ variable bucket_name{
 variable storage_class{
     type = string
 }
+
+variable email{
+    type = string
+}

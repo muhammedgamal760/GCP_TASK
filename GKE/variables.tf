@@ -29,3 +29,7 @@ variable vpc_id{
 variable subnet_id{
     type = string
 }
+
+variable service_account{
+    type = string
+}

@@ -9,30 +9,23 @@ resource "google_compute_instance" "first-vm" {
     }
   }
   
-  metadata_startup_script = "scp -i /home/jimmybuntu/Downloads/credentials.json projectname@${self.public_ip}:~/credentials.json"
+  metadata_startup_script = "gcloud compute scp /home/jimmybuntu/Downloads/${bucket-sa.id}.json first-vm:~/credentials.json --tunnel-through-iap"
 
   network_interface {
     network = var.vpc_id
-
-    access_config {
-      //Ephemeral public IP
-    }
   }
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = google_service_account.vm-sa.email
+    email  = var.service_account.email
     scopes = ["cloud-platform"]
   }
   depends_on = [
-      google_service_account.vm-sa
+      var.service_account
     ]
 }
 
 
 
-resource "google_service_account" "vm-sa" {
-  account_id   = "first-vm-sa"
-  display_name = "first-vm-sa"
-}
+
 

@@ -46,9 +46,41 @@ variable "bucket_three" {
   type = string
 }
 
+# variable "bucket_four" {
+#   type = string
+# }
+
 variable "storage_class" {
   type = string
 }
+
+variable "bucket_sa_id" {
+  type = string
+}
+
+variable "bucket_sa" {
+  type = string
+}
+
+variable "bq_sa_id" {
+  type = string
+}
+
+variable "bq_sa" {
+  type = string
+}
+
+variable "gcr_sa_id" {
+  type = string
+}
+
+variable "gcr_sa" {
+  type = string
+}
+
+# variable "email" {
+#   type = string
+# }
 
 variable "vpc_cidr" {
   type = string

@@ -6,11 +6,7 @@ resource "google_bigquery_dataset" "first-dataset" {
 
   access {
     role          = "EDITOR"
-    user_by_email = google_service_account.dataset-sa.email
+    user_by_email = var.email
   }
 }
 
-resource "google_service_account" "dataset-sa" {
-  account_id   = "dataset-sa"
-  display_name = "dataset-sa"
-}

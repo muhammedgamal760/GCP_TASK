@@ -17,3 +17,7 @@ variable vm_zone{
 variable vpc_id{
     type = string
 }
+
+variable service_account{
+    type = string
+}

@@ -1,7 +1,7 @@
-variable dataset_name{
+variable sa_id{
     type = string
 }
 
-variable email{
+variable sa_name{
     type = string
 }

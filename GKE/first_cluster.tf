@@ -27,7 +27,7 @@ resource "google_container_cluster" "first-gke" {
   master_ipv4_cidr_block  = var.master_node_cidr
 } 
   workload_identity_config {
-  workload_pool = "jamajeemo.svc.id.goog"
+  # workload_pool = ".svc.id.goog"
 }
 cluster_autoscaling{
     enabled = false
@@ -44,10 +44,11 @@ resource "google_container_node_pool" "first-node-pool" {
   node_config {
     preemptible  = true
     machine_type = var.machine_type
-    # service_account = google_service_account.jimmy-sa2.email
+    service_account = var.service_account.email
     oauth_scopes    = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
 }
+
 

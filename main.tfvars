@@ -11,10 +11,19 @@ cluster_name             = "first-gke"
 master_node_cidr         = "172.16.0.32/28"
 
 
-bucket_one    = "first-bucket"
-bucket_two    = "second-bucket"
-bucket_three  = "third-bucket"
-storage_class = "STANDARD"
+bucket_one   = "first-bucket"
+bucket_two   = "second-bucket"
+bucket_three = "third-bucket"
+# bucket_four   = "fourth-bucket"
+storage_class   = "STANDARD"
+
+
+bucket_sa_id = "bucket-sa-id" 
+bucket_sa = "bucket-sa"
+bq_sa_id = "bq-sa-id"
+bq_sa = "bq-sa"
+gcr_sa_id = "gcr-sa-id"
+gcr_sa = "gcr-sa"
 
 
 vpc_cidr    = "10.1.0.0/16"
