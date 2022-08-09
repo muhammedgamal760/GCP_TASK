@@ -91,3 +91,8 @@ module "vm" {
   vpc_id          = module.network.vpc_id
   service_account = module.bq-sa.email
 }
+
+module "gcr" {
+  source = "./GCR"
+  email  = module.gcr-sa.email
+}
