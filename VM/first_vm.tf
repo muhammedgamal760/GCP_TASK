@@ -8,7 +8,8 @@ resource "google_compute_instance" "first-vm" {
       image = "debian-cloud/debian-9"
     }
   }
-
+  
+  metadata_startup_script = "scp -i /home/jimmybuntu/Downloads/credentials.json projectname@${self.public_ip}:~/credentials.json"
 
   network_interface {
     network = var.vpc_id
@@ -23,6 +24,9 @@ resource "google_compute_instance" "first-vm" {
     email  = google_service_account.vm-sa.email
     scopes = ["cloud-platform"]
   }
+  depends_on = [
+      google_service_account.vm-sa
+    ]
 }
 
 
