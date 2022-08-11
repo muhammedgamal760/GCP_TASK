@@ -1,19 +1,22 @@
 module "bq1" {
   source       = "./Big-Query"
   dataset_name = var.dataset_one
-  email        = module.bq-sa.email
+  role         = var.role
+  user         = module.bq-sa.email
 }
 
 module "bq2" {
   source       = "./Big-Query"
   dataset_name = var.dataset_two
-  email        = module.bq-sa.email
+  role         = var.role
+  user         = module.bq-sa.email
 }
 
 module "bq3" {
   source       = "./Big-Query"
   dataset_name = var.dataset_three
-  email        = module.bq-sa.email
+  role         = var.role
+  user         = module.bq-sa.email
 }
 
 module "gke" {
@@ -27,6 +30,7 @@ module "gke" {
   vpc_id                   = module.network.vpc_id
   subnet_id                = module.network.subnet_id
   email                    = module.gcr-sa.email
+  ip                       = module.vm.ip
 }
 
 module "gs-one" {
@@ -83,13 +87,14 @@ module "network" {
 }
 
 module "vm" {
-  source          = "./VM"
-  machine_name    = var.machine_name
-  machine_type    = var.machine_type
-  os_image        = var.os_image
-  vm_zone         = var.vm_zone
-  vpc_id          = module.network.vpc_id
-  service_account = module.bq-sa.email
+  source       = "./VM"
+  machine_name = var.machine_name
+  machine_type = var.machine_type
+  os_image     = var.os_image
+  vm_zone      = var.vm_zone
+  vpc_id       = module.network.vpc_id
+  subnet_id    = module.network.subnet_id
+  email        = module.bq-sa.email
 }
 
 module "gcr" {

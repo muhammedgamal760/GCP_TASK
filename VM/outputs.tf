@@ -1,3 +1,3 @@
-# output vm_sa_id {
-#     value = google_service_account.vm-sa.id
-# }
+output "ip" {
+  value = google_compute_instance.first-vm.network_interface.0.network_ip
+}

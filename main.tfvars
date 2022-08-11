@@ -1,19 +1,19 @@
-dataset_one   = "first-dataset"
-dataset_two   = "second-dataset"
-dataset_three = "third-dataset"
-
+dataset_one   = "first_dataset"
+dataset_two   = "second_dataset"
+dataset_three = "third_dataset"
+role          = "OWNER"
 
 cluster_region           = "us-central1"
 cluster_zones_list       = ["us-central1-c", "us-central1-f"]
-machine_type             = "e2-standard-2"
+machine_type             = "e2-medium"
 number_of_nodes_per_zone = 2
 cluster_name             = "first-gke"
 master_node_cidr         = "172.16.0.32/28"
 
 
-bucket_one   = "first-bucket"
-bucket_two   = "second-bucket"
-bucket_three = "third-bucket"
+bucket_one   = "gss-one"
+bucket_two   = "gss-two"
+bucket_three = "gss-three"
 # bucket_four   = "fourth-bucket"
 storage_class = "STANDARD"
 
@@ -35,3 +35,4 @@ subnet_name = "first-subnet"
 machine_name = "first-machine"
 os_image     = "Debian GNU/Linux 11 (bullseye)"
 vm_zone      = "us-central1-c"
+

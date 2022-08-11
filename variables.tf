@@ -78,9 +78,9 @@ variable "gcr_sa" {
   type = string
 }
 
-# variable "email" {
-#   type = string
-# }
+variable "role" {
+  type = string
+}
 
 variable "vpc_cidr" {
   type = string

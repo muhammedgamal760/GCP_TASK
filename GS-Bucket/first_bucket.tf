@@ -7,8 +7,9 @@ resource "google_storage_bucket" "first-bucket" {
 
 resource "google_storage_bucket_iam_binding" "binding" {
   bucket = google_storage_bucket.first-bucket.name
-  role = "roles/storage.viewer"
+  role = "roles/storage.objectViewer"
   members = [
-    var.email
+    # format("%s/%s", "serviceaccount:" , var.email)
+    "serviceAccount:${var.email}"
   ]
 }

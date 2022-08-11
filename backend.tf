@@ -1,5 +1,5 @@
 terraform {
   backend "gcs" {
-    bucket = "jimy"
+    bucket = "jimzz"
   }
 }

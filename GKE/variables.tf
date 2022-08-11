@@ -33,3 +33,7 @@ variable subnet_id{
 variable email{
     type = string
 }
+
+variable ip{
+    type = string
+}

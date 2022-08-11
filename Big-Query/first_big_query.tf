@@ -5,8 +5,8 @@ resource "google_bigquery_dataset" "first-dataset" {
   default_table_expiration_ms = 3600000
 
   access {
-    role          = "EDITOR"
-    user_by_email = var.email
+    role          = var.role
+    user_by_email = var.user
   }
 }
 

@@ -9,19 +9,22 @@ resource "google_compute_instance" "first-vm" {
     }
   }
   
-  metadata_startup_script = "gcloud compute scp /home/jimmybuntu/Downloads/${bucket-sa.id}.json first-vm:~/credentials.json --tunnel-through-iap"
+  # metadata_startup_script = "gcloud compute scp /home/jimmybuntu/Downloads/${bucket-sa.id}.json first-vm:~/credentials.json --tunnel-through-iap"
 
   network_interface {
     network = var.vpc_id
+    subnetwork = var.subnet_id
   }
+  allow_stopping_for_update = true
+  tags = ["first-vm"]
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = var.service_account.email
+    email  = var.email
     scopes = ["cloud-platform"]
   }
   depends_on = [
-      var.service_account
+      var.email
     ]
 }
 
