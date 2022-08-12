@@ -35,6 +35,8 @@ cluster_autoscaling{
 
 }
 
+
+
 resource "google_container_node_pool" "first-node-pool" {
   name       = "first-node-pool"
   location = "us-central1"

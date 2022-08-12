@@ -109,3 +109,7 @@ variable "os_image" {
 variable "vm_zone" {
   type = string
 }
+
+variable "gcr_role" {
+  type = string
+}

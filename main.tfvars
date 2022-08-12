@@ -36,3 +36,5 @@ machine_name = "first-machine"
 os_image     = "Debian GNU/Linux 11 (bullseye)"
 vm_zone      = "us-central1-c"
 
+
+gcr_role = "roles/storage.objectViewer"

@@ -72,12 +72,6 @@ module "gcr-sa" {
   sa_name = var.gcr_sa
 }
 
-# module "gs-four" {
-#   source        = "./GS-Bucket"
-#   bucket_name   = var.bucket_four
-#   storage_class = var.storage_class
-# }
-
 module "network" {
   source      = "./Network"
   vpc_cidr    = var.vpc_cidr
@@ -99,5 +93,6 @@ module "vm" {
 
 module "gcr" {
   source = "./GCR"
+  role   = var.gcr_role
   email  = module.gcr-sa.email
 }
