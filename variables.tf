@@ -10,29 +10,29 @@ variable "dataset_name" {
 #   type = string
 # }
 
-variable "cluster_region" {
-  type = string
-}
+# variable "cluster_region" {
+#   type = string
+# }
 
-variable "cluster_name" {
-  type = string
-}
+# variable "cluster_name" {
+#   type = string
+# }
 
-variable "cluster_zones_list" {
-  type = list(any)
-}
+# variable "cluster_zones_list" {
+#   type = list(any)
+# }
 
-variable "machine_type" {
-  type = string
-}
+# variable "machine_type" {
+#   type = string
+# }
 
-variable "number_of_nodes_per_zone" {
-  type = number
-}
+# variable "number_of_nodes_per_zone" {
+#   type = number
+# }
 
-variable "master_node_cidr" {
-  type = string
-}
+# variable "master_node_cidr" {
+#   type = string
+# }
 
 variable "bucket_name" {
   type = list(string)
@@ -110,6 +110,6 @@ variable "vm_zone" {
   type = string
 }
 
-variable "gcr_role" {
-  type = string
-}
+# variable "gcr_role" {
+#   type = string
+# }

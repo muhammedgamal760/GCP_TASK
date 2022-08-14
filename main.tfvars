@@ -3,12 +3,12 @@ dataset_name   = ["first_dataset","second_dataset","third_dataset"]
 # dataset_three = "third_dataset"
 role          = "OWNER"
 
-cluster_region           = "us-central1"
-cluster_zones_list       = ["us-central1-c", "us-central1-f"]
-machine_type             = "e2-medium"
-number_of_nodes_per_zone = 2
-cluster_name             = "first-gke"
-master_node_cidr         = "172.16.0.32/28"
+# cluster_region           = "us-central1"
+# cluster_zones_list       = ["us-central1-c", "us-central1-f"]
+# machine_type             = "e2-medium"
+# number_of_nodes_per_zone = 2
+# cluster_name             = "first-gke"
+# master_node_cidr         = "172.16.0.32/28"
 
 
 bucket_name   = ["gss-one","gss-two","gss-three"]
@@ -37,4 +37,4 @@ os_image     = "Debian GNU/Linux 11 (bullseye)"
 vm_zone      = "us-central1-c"
 
 
-gcr_role = "roles/storage.objectViewer"
+# gcr_role = "roles/storage.objectViewer"

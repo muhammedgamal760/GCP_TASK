@@ -19,19 +19,19 @@ module "bq1" {
 #   user         = module.bq-sa.email
 # }
 
-module "gke" {
-  source                   = "./GKE"
-  cluster_region           = var.cluster_region
-  cluster_zones_list       = var.cluster_zones_list
-  machine_type             = var.machine_type
-  number_of_nodes_per_zone = var.number_of_nodes_per_zone
-  cluster_name             = var.cluster_name
-  master_node_cidr         = var.master_node_cidr
-  vpc_id                   = module.network.vpc_id
-  subnet_id                = module.network.subnet_id
-  email                    = module.gcr-sa.email
-  ip                       = module.vm.ip
-}
+# module "gke" {
+#   source                   = "./GKE"
+#   cluster_region           = var.cluster_region
+#   cluster_zones_list       = var.cluster_zones_list
+#   machine_type             = var.machine_type
+#   number_of_nodes_per_zone = var.number_of_nodes_per_zone
+#   cluster_name             = var.cluster_name
+#   master_node_cidr         = var.master_node_cidr
+#   vpc_id                   = module.network.vpc_id
+#   subnet_id                = module.network.subnet_id
+#   email                    = module.gcr-sa.email
+#   ip                       = module.vm.ip
+# }
 
 module "gs-one" {
   source        = "./GS-Bucket"
@@ -91,8 +91,8 @@ module "vm" {
   email        = module.bq-sa.email
 }
 
-module "gcr" {
-  source = "./GCR"
-  role   = var.gcr_role
-  email  = module.gcr-sa.email
-}
+# module "gcr" {
+#   source = "./GCR"
+#   role   = var.gcr_role
+#   email  = module.gcr-sa.email
+# }
