@@ -1,76 +1,37 @@
-module "bq1" {
+module "bq" {
   source       = "./Big-Query"
   dataset_name = var.dataset_name
   role         = var.role
-  user         = module.bq-sa.email
+  user         = module.sa.email[1]
 }
 
-# module "bq2" {
-#   source       = "./Big-Query"
-#   dataset_name = var.dataset_two
-#   role         = var.role
-#   user         = module.bq-sa.email
-# }
 
-# module "bq3" {
-#   source       = "./Big-Query"
-#   dataset_name = var.dataset_three
-#   role         = var.role
-#   user         = module.bq-sa.email
-# }
+module "gke" {
+  source                   = "./GKE"
+  cluster_region           = var.cluster_region
+  cluster_zones_list       = var.cluster_zones_list
+  machine_type             = var.machine_type
+  number_of_nodes_per_zone = var.number_of_nodes_per_zone
+  cluster_name             = var.cluster_name
+  master_node_cidr         = var.master_node_cidr
+  vpc_id                   = module.network.vpc_id
+  subnet_id                = module.network.subnet_id
+  email                    = module.sa.email[2]
+  ip                       = module.vm.ip
+}
 
-# module "gke" {
-#   source                   = "./GKE"
-#   cluster_region           = var.cluster_region
-#   cluster_zones_list       = var.cluster_zones_list
-#   machine_type             = var.machine_type
-#   number_of_nodes_per_zone = var.number_of_nodes_per_zone
-#   cluster_name             = var.cluster_name
-#   master_node_cidr         = var.master_node_cidr
-#   vpc_id                   = module.network.vpc_id
-#   subnet_id                = module.network.subnet_id
-#   email                    = module.gcr-sa.email
-#   ip                       = module.vm.ip
-# }
-
-module "gs-one" {
+module "gs-bucket" {
   source        = "./GS-Bucket"
   bucket_name   = var.bucket_name
   storage_class = var.storage_class
-  email         = module.bucket-sa.email
+  email         = module.sa.email[0]
 }
-
-# module "gs-two" {
-#   source        = "./GS-Bucket"
-#   bucket_name   = var.bucket_two
-#   storage_class = var.storage_class
-#   email         = module.bucket-sa.email
-# }
-
-# module "gs-three" {
-#   source        = "./GS-Bucket"
-#   bucket_name   = var.bucket_three
-#   storage_class = var.storage_class
-#   email         = module.bucket-sa.email
-# }
 
 module "sa" {
   source  = "./Service_Accounts"
   sa_id   = var.sa_id
   sa_name = var.sa
 }
-
-# module "bq-sa" {
-#   source  = "./Service_Accounts"
-#   sa_id   = var.bq_sa_id
-#   sa_name = var.bq_sa
-# }
-
-# module "gcr-sa" {
-#   source  = "./Service_Accounts"
-#   sa_id   = var.gcr_sa_id
-#   sa_name = var.gcr_sa
-# }
 
 module "network" {
   source      = "./Network"
@@ -88,11 +49,11 @@ module "vm" {
   vm_zone      = var.vm_zone
   vpc_id       = module.network.vpc_id
   subnet_id    = module.network.subnet_id
-  email        = module.bq-sa.email
+  email        = module.sa.email[1]
 }
 
-# module "gcr" {
-#   source = "./GCR"
-#   role   = var.gcr_role
-#   email  = module.gcr-sa.email
-# }
+module "gcr" {
+  source = "./GCR"
+  role   = var.gcr_role
+  email  = module.sa.email[2]
+}

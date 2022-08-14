@@ -1,59 +1,47 @@
+/////////////////////////////////
+//for big query
 variable "dataset_name" {
   type = list(string)
 }
 
-# variable "dataset_two" {
-#   type = string
-# }
+/////////////////////////////////
+//for cluster
+variable "cluster_region" {
+  type = string
+}
 
-# variable "dataset_three" {
-#   type = string
-# }
+variable "cluster_name" {
+  type = string
+}
 
-# variable "cluster_region" {
-#   type = string
-# }
+variable "cluster_zones_list" {
+  type = list(any)
+}
 
-# variable "cluster_name" {
-#   type = string
-# }
+variable "machine_type" {
+  type = string
+}
 
-# variable "cluster_zones_list" {
-#   type = list(any)
-# }
+variable "number_of_nodes_per_zone" {
+  type = number
+}
 
-# variable "machine_type" {
-#   type = string
-# }
+variable "master_node_cidr" {
+  type = string
+}
 
-# variable "number_of_nodes_per_zone" {
-#   type = number
-# }
-
-# variable "master_node_cidr" {
-#   type = string
-# }
-
+/////////////////////////////////
+//for buckets
 variable "bucket_name" {
   type = list(string)
 }
-
-# variable "bucket_two" {
-#   type = string
-# }
-
-# variable "bucket_three" {
-#   type = string
-# }
-
-# variable "bucket_four" {
-#   type = string
-# }
 
 variable "storage_class" {
   type = string
 }
 
+/////////////////////////////////
+//for service accounts
 variable "sa_id" {
   type = list(string)
 }
@@ -62,26 +50,8 @@ variable "sa" {
   type = list(string)
 }
 
-# variable "bq_sa_id" {
-#   type = string
-# }
-
-# variable "bq_sa" {
-#   type = string
-# }
-
-# variable "gcr_sa_id" {
-#   type = string
-# }
-
-# variable "gcr_sa" {
-#   type = string
-# }
-
-variable "role" {
-  type = string
-}
-
+/////////////////////////////////
+//for network
 variable "vpc_cidr" {
   type = string
 }
@@ -98,6 +68,8 @@ variable "subnet_name" {
   type = string
 }
 
+/////////////////////////////////
+//for vm
 variable "machine_name" {
   type = string
 }
@@ -110,6 +82,12 @@ variable "vm_zone" {
   type = string
 }
 
-# variable "gcr_role" {
-#   type = string
-# }
+/////////////////////////////////
+//for gcr
+variable "role" {
+  type = string
+}
+
+variable "gcr_role" {
+  type = string
+}
