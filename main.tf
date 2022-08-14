@@ -1,23 +1,23 @@
 module "bq1" {
   source       = "./Big-Query"
-  dataset_name = var.dataset_one
+  dataset_name = var.dataset_name
   role         = var.role
   user         = module.bq-sa.email
 }
 
-module "bq2" {
-  source       = "./Big-Query"
-  dataset_name = var.dataset_two
-  role         = var.role
-  user         = module.bq-sa.email
-}
+# module "bq2" {
+#   source       = "./Big-Query"
+#   dataset_name = var.dataset_two
+#   role         = var.role
+#   user         = module.bq-sa.email
+# }
 
-module "bq3" {
-  source       = "./Big-Query"
-  dataset_name = var.dataset_three
-  role         = var.role
-  user         = module.bq-sa.email
-}
+# module "bq3" {
+#   source       = "./Big-Query"
+#   dataset_name = var.dataset_three
+#   role         = var.role
+#   user         = module.bq-sa.email
+# }
 
 module "gke" {
   source                   = "./GKE"
@@ -35,42 +35,42 @@ module "gke" {
 
 module "gs-one" {
   source        = "./GS-Bucket"
-  bucket_name   = var.bucket_one
+  bucket_name   = var.bucket_name
   storage_class = var.storage_class
   email         = module.bucket-sa.email
 }
 
-module "gs-two" {
-  source        = "./GS-Bucket"
-  bucket_name   = var.bucket_two
-  storage_class = var.storage_class
-  email         = module.bucket-sa.email
-}
+# module "gs-two" {
+#   source        = "./GS-Bucket"
+#   bucket_name   = var.bucket_two
+#   storage_class = var.storage_class
+#   email         = module.bucket-sa.email
+# }
 
-module "gs-three" {
-  source        = "./GS-Bucket"
-  bucket_name   = var.bucket_three
-  storage_class = var.storage_class
-  email         = module.bucket-sa.email
-}
+# module "gs-three" {
+#   source        = "./GS-Bucket"
+#   bucket_name   = var.bucket_three
+#   storage_class = var.storage_class
+#   email         = module.bucket-sa.email
+# }
 
-module "bucket-sa" {
+module "sa" {
   source  = "./Service_Accounts"
-  sa_id   = var.bucket_sa_id
-  sa_name = var.bucket_sa
+  sa_id   = var.sa_id
+  sa_name = var.sa
 }
 
-module "bq-sa" {
-  source  = "./Service_Accounts"
-  sa_id   = var.bq_sa_id
-  sa_name = var.bq_sa
-}
+# module "bq-sa" {
+#   source  = "./Service_Accounts"
+#   sa_id   = var.bq_sa_id
+#   sa_name = var.bq_sa
+# }
 
-module "gcr-sa" {
-  source  = "./Service_Accounts"
-  sa_id   = var.gcr_sa_id
-  sa_name = var.gcr_sa
-}
+# module "gcr-sa" {
+#   source  = "./Service_Accounts"
+#   sa_id   = var.gcr_sa_id
+#   sa_name = var.gcr_sa
+# }
 
 module "network" {
   source      = "./Network"

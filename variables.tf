@@ -1,14 +1,14 @@
-variable "dataset_one" {
-  type = string
+variable "dataset_name" {
+  type = list(string)
 }
 
-variable "dataset_two" {
-  type = string
-}
+# variable "dataset_two" {
+#   type = string
+# }
 
-variable "dataset_three" {
-  type = string
-}
+# variable "dataset_three" {
+#   type = string
+# }
 
 variable "cluster_region" {
   type = string
@@ -34,17 +34,17 @@ variable "master_node_cidr" {
   type = string
 }
 
-variable "bucket_one" {
-  type = string
+variable "bucket_name" {
+  type = list(string)
 }
 
-variable "bucket_two" {
-  type = string
-}
+# variable "bucket_two" {
+#   type = string
+# }
 
-variable "bucket_three" {
-  type = string
-}
+# variable "bucket_three" {
+#   type = string
+# }
 
 # variable "bucket_four" {
 #   type = string
@@ -54,29 +54,29 @@ variable "storage_class" {
   type = string
 }
 
-variable "bucket_sa_id" {
-  type = string
+variable "sa_id" {
+  type = list(string)
 }
 
-variable "bucket_sa" {
-  type = string
+variable "sa" {
+  type = list(string)
 }
 
-variable "bq_sa_id" {
-  type = string
-}
+# variable "bq_sa_id" {
+#   type = string
+# }
 
-variable "bq_sa" {
-  type = string
-}
+# variable "bq_sa" {
+#   type = string
+# }
 
-variable "gcr_sa_id" {
-  type = string
-}
+# variable "gcr_sa_id" {
+#   type = string
+# }
 
-variable "gcr_sa" {
-  type = string
-}
+# variable "gcr_sa" {
+#   type = string
+# }
 
 variable "role" {
   type = string
