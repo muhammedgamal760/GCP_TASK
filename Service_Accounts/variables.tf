@@ -1,7 +1,7 @@
 variable sa_id{
-    type = list(string)
+    type = set(string)
 }
 
 variable sa_name{
-    type = list(string)
+    type = set(string)
 }

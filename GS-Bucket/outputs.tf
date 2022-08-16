@@ -1,3 +1,4 @@
 output bucket_id{
-    value = google_storage_bucket.first-bucket[*].id
+    value = [for gs in google_storage_bucket.first-bucket : gs.id]
 }
+

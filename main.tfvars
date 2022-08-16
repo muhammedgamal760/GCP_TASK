@@ -1,7 +1,7 @@
 /////////////////////////////////
 //for big query
 dataset_name = ["first_dataset", "second_dataset", "third_dataset"]
-role = "OWNER"
+role = "editor"
 
 /////////////////////////////////
 //for cluster

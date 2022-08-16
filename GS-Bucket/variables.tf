@@ -1,5 +1,5 @@
 variable bucket_name{
-    type = list(string)
+    type = set(string)
 }
 
 variable storage_class{

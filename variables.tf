@@ -1,7 +1,7 @@
 /////////////////////////////////
 //for big query
 variable "dataset_name" {
-  type = list(string)
+  type = set(string)
 }
 
 /////////////////////////////////
@@ -33,7 +33,7 @@ variable "master_node_cidr" {
 /////////////////////////////////
 //for buckets
 variable "bucket_name" {
-  type = list(string)
+  type = set(string)
 }
 
 variable "storage_class" {
@@ -43,11 +43,11 @@ variable "storage_class" {
 /////////////////////////////////
 //for service accounts
 variable "sa_id" {
-  type = list(string)
+  type = set(string)
 }
 
 variable "sa" {
-  type = list(string)
+  type = set(string)
 }
 
 /////////////////////////////////

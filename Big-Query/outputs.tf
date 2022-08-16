@@ -1,7 +1,3 @@
-output bq_id{
-    value = google_bigquery_dataset.first-dataset[*].id
+output id{
+    value = tolist([for dataset in google_bigquery_dataset.first-dataset : dataset.id])
 }
-
-# output bq_sa_id {
-#     value = google_service_account.dataset-sa.id
-# }
