@@ -1,5 +1,5 @@
 variable dataset_name{
-    type = set(string)
+    type = list(string)
 }
 
 variable role{

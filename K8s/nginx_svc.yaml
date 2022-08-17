@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  creationTimestamp: "2022-08-17T10:28:32Z"
+  labels:
+    app: nginx
+  name: nginx
+  namespace: default
+  resourceVersion: "39292"
+  uid: 104c0e56-ab37-4a5b-80d8-2b571d3a729a
+spec:
+  clusterIP: 10.0.4.240
+  clusterIPs:
+  - 10.0.4.240
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: 80-80
+    nodePort: 31685
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

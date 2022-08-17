@@ -22,10 +22,6 @@ variable vpc_id{
     type = string
 }
 
-# variable service_account{
-#     type = string
-# }
-
 variable email{
     type = string
 }

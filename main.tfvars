@@ -1,7 +1,7 @@
 /////////////////////////////////
 //for big query
 dataset_name = ["first_dataset", "second_dataset", "third_dataset"]
-role = "editor"
+role = "roles/bigquery.dataViewer"
 
 /////////////////////////////////
 //for cluster

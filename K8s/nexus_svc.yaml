@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  creationTimestamp: "2022-08-17T10:32:27Z"
+  labels:
+    app: nexus
+  name: nexus
+  namespace: default
+  resourceVersion: "41169"
+  uid: 072164bd-731f-45ad-ae6e-9c26d13bc327
+spec:
+  clusterIP: 10.0.4.169
+  clusterIPs:
+  - 10.0.4.169
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: 8081-8081
+    nodePort: 32216
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: nexus
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

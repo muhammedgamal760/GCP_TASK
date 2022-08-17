@@ -1,7 +1,11 @@
 /////////////////////////////////
 //for big query
 variable "dataset_name" {
-  type = set(string)
+  type = list(string)
+}
+
+variable "role" {
+  type = string
 }
 
 /////////////////////////////////
@@ -43,11 +47,11 @@ variable "storage_class" {
 /////////////////////////////////
 //for service accounts
 variable "sa_id" {
-  type = set(string)
+  type = list(string)
 }
 
 variable "sa" {
-  type = set(string)
+  type = list(string)
 }
 
 /////////////////////////////////
@@ -84,10 +88,6 @@ variable "vm_zone" {
 
 /////////////////////////////////
 //for gcr
-variable "role" {
-  type = string
-}
-
 variable "gcr_role" {
   type = string
 }
