@@ -7,7 +7,7 @@ metadata:
   labels:
     app: jenkins
   name: jenkins
-  namespace: default
+  namespace: shared-services
   resourceVersion: "40546"
   uid: b955d595-4f2f-48d6-b140-53c447941b31
 spec:
@@ -43,7 +43,7 @@ metadata:
   labels:
     app: nexus
   name: nexus
-  namespace: default
+  namespace: shared-services
   resourceVersion: "41169"
   uid: 072164bd-731f-45ad-ae6e-9c26d13bc327
 spec:
@@ -79,7 +79,7 @@ metadata:
   labels:
     app: nginx
   name: nginx
-  namespace: default
+  namespace: dev
   resourceVersion: "39292"
   uid: 104c0e56-ab37-4a5b-80d8-2b571d3a729a
 spec:
