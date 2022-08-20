@@ -21,12 +21,13 @@ spec:
       containers:
       - image: us.gcr.io/jimmy-359009/jenkins
         name: jenkins
-        livenessProbe:
+        readinessProbe:
           exec:
             command:
-            - echo "hi"
-          initialDelaySeconds: 3
-          periodSeconds: 3
+            - echo
+            - "hi"
+          initialDelaySeconds: 5
+          periodSeconds: 5
         resources: {}
 status: {}
 
@@ -55,12 +56,13 @@ spec:
       containers:
       - image: us.gcr.io/jimmy-359009/nexus
         name: nexus
-        livenessProbe:
+        readinessProbe:
           exec:
             command:
-            - echo "hi"
-          initialDelaySeconds: 3
-          periodSeconds: 3
+            - echo
+            - "hi"
+          initialDelaySeconds: 5
+          periodSeconds: 5
         resources: {}
 status: {}
 
@@ -89,11 +91,12 @@ spec:
       containers:
       - image: us.gcr.io/jimmy-359009/nginx
         name: nginx
-        livenessProbe:
+        readinessProbe:
           exec:
             command:
-            - echo "hi"
-          initialDelaySeconds: 3
-          periodSeconds: 3
+            - echo
+            - "hi"
+          initialDelaySeconds: 5
+          periodSeconds: 5
         resources: {}
 status: {}
