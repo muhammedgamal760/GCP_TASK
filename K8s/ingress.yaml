@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: shared-services
   namespace: shared-services
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
@@ -29,6 +31,8 @@ kind: Ingress
 metadata:
   name: dev
   namespace: dev
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
